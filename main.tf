@@ -1,4 +1,4 @@
-# Copyright 2019 NephoSolutions SPRL, Sebastian Trebitz
+# Copyright 2021 NephoSolutions srl, Sebastian Trebitz
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,9 +15,15 @@
 locals {
   project_id = var.project_id != "" ? var.project_id : null
   project_roles = [
+    "roles/cloudasset.viewer",
     "roles/compute.viewer",
-    "roles/container.viewer",
     "roles/monitoring.viewer",
+  ]
+  project_services = [
+    "cloudasset.googleapis.com",
+    "cloudbilling.googleapis.com",
+    "compute.googleapis.com",
+    "monitoring.googleapis.com",
   ]
 }
 
@@ -27,6 +33,13 @@ module "service_account" {
 
   display_name = "Datadog integration"
   project_id   = local.project_id
+}
+
+resource "google_project_service" "required" {
+  for_each = toset(local.project_services)
+
+  disable_on_destroy = false
+  service            = each.key
 }
 
 resource "google_service_account_key" "datadog" {
