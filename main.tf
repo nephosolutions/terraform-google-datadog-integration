@@ -39,6 +39,7 @@ resource "google_project_service" "required" {
   for_each = toset(local.project_services)
 
   disable_on_destroy = false
+  project            = local.project_id
   service            = each.key
 }
 

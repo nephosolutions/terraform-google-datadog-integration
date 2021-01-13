@@ -7,7 +7,7 @@ This Terraform module integrates a Google Cloud Platform project into Datadog
 ```hcl
 module "datadog_integration" {
   source  = "nephosolutions/datadog-integration/google"
-  version = "2.1.0"
+  version = "2.1.1"
 
   project_id   = "..."
 }

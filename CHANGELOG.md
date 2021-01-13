@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.1.1] - 2021-01-13
+
+- bug fix missing project field for google_project_service resource
+
 ## [2.1.0] - 2021-01-13
 
 - Add Terraform 0.13 compatibility
@@ -19,7 +23,8 @@ All notable changes to this project will be documented in this file.
 
 - Initial release
 
-[Unreleased]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v2.1.0...HEAD
+[Unreleased]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v2.1.1...HEAD
+[2.1.1]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/nephosolutions/terraform-google-gcp-project/releases/tag/v1.0.0
