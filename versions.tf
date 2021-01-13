@@ -14,9 +14,18 @@
 
 terraform {
   required_providers {
-    datadog = ">= 1.9"
-    google  = ">= 2.10"
-    random  = ">= 2.0"
+    datadog = {
+      source  = "datadog/datadog"
+      version = ">= 1.9"
+    }
+    google = {
+      source  = "hashicorp/google"
+      version = ">= 2.10"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = ">= 2.0"
+    }
   }
-  required_version = ">= 0.12.6"
+  required_version = ">= 0.12.26"
 }
